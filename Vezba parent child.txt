@@ -1,0 +1,12 @@
+Vezba2
+	-Kreirati polja za ime, prezime, username i password, i dugme za Sign Up (password kao u prethodnom zadatku, ostala polja su obicna tekstualna polja)
+	-polja i dugme neka budu u posebnoj komponenti (sign-up.component koja ce predstavljati child componentu)
+	-ukoliko se upise manje od 3 karaktera za ime i 2 za prezime na parent komponenti ispisati poruku da ime mora imati bar 3 karaktera i prezime mora imati bar 2 karaktera (crvena slova)
+	-ukoliko se upise manje od 5 karaktera za username i password na parent komponenti ispisati poruku da username i password moraju imati bar 5 karaktera (crvena slova)
+	-poruke ispisivati samo nakon klika na Sign Up dugme (ne ispisivati nista dok korisnik kuca)
+	-ako su sva polja popunjena kako treba i korisnik pritisne Sign Up dugme na parent komponenti ispisati zelenu poruku da je korisnik uspesno registrovan u sistem
+	
+	Dodatak:
+		-poruke ispisati koristeci alert
+		-dodati polje email u formu za prijavu i proveravati da li je unet ispravan mejl (da li sadrzi @ i .com), ako ne sadrzi takodje ispisivati na Sign Up dugme da email nije dobro popunjen (crvena slova)
+		
