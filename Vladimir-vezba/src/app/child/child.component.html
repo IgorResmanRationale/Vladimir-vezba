@@ -1,0 +1,19 @@
+<label>Name</label>
+<input type="text" class="form-control" [(ngModel)]="ime">
+<label>Surname</label>
+<input type="text" class="form-control" [(ngModel)]="prezime">
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<label>Password</label>
+<input type="password" class="form-control" [(ngModel)]="password"> 
+<label>Email</label>
+<input type="email" class="form-control" [(ngModel)]="email" >
+<button class="btn btn-primary" (click)="onLogin()">Sing Up</button> 
+ <div *ngIf="showSecret" [ngStyle]="{'color': 'red'}">
+    <p >ime mora imati bar 3 karaktera</p>
+    <p >prezime mora imati bar 2 karaktera</p>
+    <p >username i password moraju imati bar 5 karaktera</p>
+    <p >email nije dobro popunjen</p>
+</div>
+
+
