@@ -1,0 +1,43 @@
+<div>
+  <table>
+    <tr>
+      <th><label>Name</label></th>
+      <th><input type="text" class="form-control" [(ngModel)]="name"></th>
+    </tr>
+    <tr>
+      <th><label>Last name</label></th>
+      <th><input type="text" class="form-control" [(ngModel)]="lastName"></th>
+    </tr>
+    <tr>
+      <th><label>Birth Date</label></th>
+      <th><input type="date" class="date-input"  [(ngModel)]="birthDate"></th>
+    </tr>
+    <tr>
+      <th><label>Security number</label></th>
+      <th><input type="number" class="form-control" [(ngModel)]="securityNumber"></th>
+    </tr>
+    <tr>
+      <th><label>Age</label></th>
+      <th><input type="number" class="form-control" [(ngModel)]="age"> </th>
+    </tr>
+    <tr>
+      <th><label>Position</label></th>
+      <th><input type="text" class="form-control" [(ngModel)]="position"></th>
+    </tr>
+    <tr>
+      <th><label>Email</label></th>
+      <th><input type="email" class="form-control" [(ngModel)]="email"></th>
+    </tr>
+    <tr>
+      <th><label>Username</label></th>
+      <th><input type="text" class="form-control" [(ngModel)]="username"></th>
+    </tr>
+    <tr>
+      <th><label>Password</label></th>
+      <th><input type="password" class="form-control" [(ngModel)]="password"></th>
+    </tr>
+  </table>
+</div>
+<div>
+  <button class="save-button" (click)="onSave()">Save</button>
+</div>

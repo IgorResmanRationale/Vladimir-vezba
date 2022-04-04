@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Vladimir-vezba": {
+    "vladimir-vezba": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Vladimir-vezba:build:production"
+              "browserTarget": "vladimir-vezba:build:production"
             },
             "development": {
-              "browserTarget": "Vladimir-vezba:build:development"
+              "browserTarget": "vladimir-vezba:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Vladimir-vezba:build"
+            "browserTarget": "vladimir-vezba:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "Vladimir-vezba"
+  "defaultProject": "vladimir-vezba"
 }

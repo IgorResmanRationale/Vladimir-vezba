@@ -1,0 +1,57 @@
+<div *ngIf="employeeList">
+  <ul *ngFor="let employee of employeeList">
+    <li>
+      <div>
+        {{employee.name}} {{employee.lastName}}
+        <button class="button-class" (click)="onEmployeeEdit(employee.id)">Edit</button>
+        <button class="button-class" (click)="onEmployeeDelete(employee.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+<div *ngIf="employeeForEdit">
+  <div>
+    <table>
+      <tr>
+        <th><label>Name</label></th>
+        <th><input type="text" class="form-control" [(ngModel)]="employeeForEdit.name"></th>
+      </tr>
+      <tr>
+        <th><label>Last name</label></th>
+        <th><input type="text" class="form-control" [(ngModel)]="employeeForEdit.lastName"></th>
+      </tr>
+      <tr>
+        <th><label>Birth Date</label></th>
+        <th><input type="date" class="date-input"  [ngModel]="employeeForEdit.birthDate | date:'yyyy-MM-dd'"></th>
+      </tr>
+      <tr>
+        <th><label>Security number</label></th>
+        <th><input type="number" class="form-control" [(ngModel)]="employeeForEdit.securityNumber"></th>
+      </tr>
+      <tr>
+        <th><label>Age</label></th>
+        <th><input type="number" class="form-control" [(ngModel)]="employeeForEdit.age"> </th>
+      </tr>
+      <tr>
+        <th><label>Position</label></th>
+        <th><input type="text" class="form-control" [(ngModel)]="employeeForEdit.position"></th>
+      </tr>
+      <tr>
+        <th><label>Email</label></th>
+        <th><input type="email" class="form-control" [(ngModel)]="employeeForEdit.email"></th>
+      </tr>
+      <tr>
+        <th><label>Username</label></th>
+        <th><input type="text" class="form-control" [(ngModel)]="employeeForEdit.username"></th>
+      </tr>
+      <tr>
+        <th><label>Password</label></th>
+        <th><input type="password" class="form-control" [(ngModel)]="employeeForEdit.password"></th>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <button (click)="onEditCancel()">Cancel</button>
+    <button (click)="onEditSave()">Save</button>
+  </div>
+</div>

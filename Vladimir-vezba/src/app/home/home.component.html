@@ -1,0 +1,10 @@
+<div class="login-button">
+  <button (click)="onLogin()">Login</button>
+</div>
+<div>
+  <button class="tab" (click)="onTabChange('employeeList')">Employee List</button>
+  <button class="tab" (click)="onTabChange('addEmployee')">Add Employee</button>
+
+  <app-employee-list #employeeList *ngIf="activeTab === 'employeeList'"></app-employee-list>
+  <app-add-employee #addEmployee *ngIf="activeTab === 'addEmployee'"></app-add-employee>
+</div>

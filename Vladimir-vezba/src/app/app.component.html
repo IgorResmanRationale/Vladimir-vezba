@@ -1,5 +1,49 @@
-<app-child (show)="boolShow($event)">
-</app-child>
-<div *ngIf="showRegistertationMessage === true">
-    <p>Korisnik uspesno registrovan</p>
-</div>
+<body>
+    <div >
+       <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" /> 
+      <p ngClass='text1'>User Info</p>
+    </div>
+    <div ngClass='body'>
+    <div ngClass='div1'>
+       <div ngClass='img'></div><br><br>   
+       <button ngClass='button'>Upload</button>
+    </div>
+    <div ngClass='div2'>
+       <label ngClass='text'>Email</label><br>
+       <input type="email" ngClass='input' ><br><br>
+       <label ngClass='text'>First Name:</label><br>
+       <input type="text" ngClass='input' ><br><br>
+       <label ngClass='text'>Company:</label><br>
+       <input type="search" list="data" ngClass='input2' >
+       <datalist id="data">
+           <option value="1">
+           <option value="2">
+       </datalist><br><br>
+       <label ngClass='text'>Work Phone:</label><br>
+       <input type="text" ngClass='input' >
+    </div>
+    <div ngClass='div3'>
+       <label ngClass='text'>Alt. Email:</label><br>
+       <input type="email" ngClass='input' ><br><br>
+       <label ngClass='text'>Last Name:</label><br>
+       <input type="text" ngClass='input' ><br><br>
+       <label ngClass='text'>Designation:</label><br>
+       <input type="text" ngClass='input' ><br><br>
+       <label ngClass='text'>Mobile Phone:</label><br>
+       <input type="text" ngClass='input' ><br><br>
+    </div>
+    <div ngClass='div4'>
+       <label ngClass='text'>Status:</label><br>
+       <input type="search" list="data1" ngClass='input2' >
+       <datalist id="data1">
+           <option value="Active">
+           <option value="Passive">
+       </datalist><br><br>
+       <label ngClass='text'>Username</label><br>
+       <input type="text" ngClass='input' ><br><br>
+       <label ngClass='text'>Initials:</label><br>
+       <input type="text" ngClass='input' ><br><br>
+    </div>
+   </div>  
+   </body>
+   

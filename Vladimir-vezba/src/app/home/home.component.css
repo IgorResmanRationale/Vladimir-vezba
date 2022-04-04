@@ -1,0 +1,14 @@
+.tab{
+    background-color: transparent;
+    border: 0px;
+}
+.tab:hover{
+    background-color: black;
+    color: white;
+}
+
+.login-button{
+    display: flex;
+    justify-content: flex-end;
+}
+
