@@ -1,0 +1,49 @@
+<body >
+ <div>
+    <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" /> 
+   <p ngClass='text1'>User Info</p>
+ </div>
+ <div ngClass='body1' *ngIf="account != undefined">
+ <div ngClass='div11'>
+    <div ngClass='img'></div><br><br>   
+    <button ngClass='button123' (click)="saveData(account)">Upload</button>
+ </div>
+ <div ngClass='div22'>
+    <label ngClass='text'>Email</label><br>
+    <input type="email" ngClass='input' [(ngModel)]="account.email"><br><br>
+    <label ngClass='text'>First Name:</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.name"><br><br>
+    <label ngClass='text'>Company:</label><br>
+    <input type="search" list="data" ngClass='input2' [(ngModel)]="account.company">
+    <datalist id="data">
+        <option value="1">
+        <option value="2">
+    </datalist><br><br>
+    <label ngClass='text'>Work Phone:</label><br>
+    <input type="text" ngClass='input'  [(ngModel)]="account.workPhone">
+ </div>
+ <div ngClass='div33'>
+    <label ngClass='text'>Alt. Email:</label><br>
+    <input type="email" ngClass='input' [(ngModel)]="account.altEmail"><br><br>
+    <label ngClass='text'>Last Name:</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.lastName"><br><br>
+    <label ngClass='text'>Designation:</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.designaton"><br><br>
+    <label ngClass='text'>Mobile Phone:</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.mobilPhone"><br><br>
+ </div>
+ <div ngClass='div44'>
+    <label ngClass='text'>Status:</label><br>
+    <input type="search" list="data1" ngClass='input2' [(ngModel)]="account.status">
+    <datalist id="data1">
+        <option value="Active">
+        <option value="Passive">
+    </datalist><br><br>
+    <label ngClass='text'>Username</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.username"><br><br>
+    <label ngClass='text'>Initials:</label><br>
+    <input type="text" ngClass='input' [(ngModel)]="account.initials"><br><br>
+ </div>
+</div> 
+ 
+</body>

@@ -1,0 +1,13 @@
+.two  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; margin: 0px 1200px 0px 20px; };
+.absolute {  position: absolute;
+    top: 80px;
+    right: 400px;
+    border: 3px solid #367cdf;}
+
+.div {
+        position: absolute;
+        top: 80px;
+        left: 600px;   
+      } 
+
+.one  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; }

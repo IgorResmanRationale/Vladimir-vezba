@@ -1,0 +1,39 @@
+.button {
+        position: absolute;
+        top: 140px;
+        left: 746px; 
+        background-color: #367cdf; 
+        border: none;
+        color: white;
+        padding: 13px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+       
+      }
+  
+  .button:hover {background-color: #367cdf}
+  
+.two  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 27px; margin: 67px 600px 0px 550px; }
+
+.div {
+    position: absolute;
+    top: 80px;
+    left: 600px;   
+  } 
+.div1 {
+    position: absolute;
+    top: 80px;
+    left: 670px;   
+  }
+.div2 {
+    position: absolute;
+    top: 110px;
+    left: 600px;   
+  } 
+.div3 {
+    position: absolute;
+    top: 110px;
+    left: 670px;   
+  }  

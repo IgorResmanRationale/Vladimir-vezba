@@ -1,0 +1,42 @@
+<div class="container">
+<ul type="none" ngClass='two' class="list-group">
+    <a
+      class="list-group-item"
+      style="cursor: pointer"
+      *ngFor="let account of accounts"
+    >
+     <li>Name: {{account.name }} </li>
+     <li>Lastname: {{ account.lastName }} </li>
+     <li>Birthdate: {{ account.birthDate }} </li>
+     <li>SecNumber: {{ account.secNumber }}</li>
+     <li>Age: {{ account.age }}</li> 
+     <li>Position: {{ account.position }} </li>
+     <li>Email: {{ account.email }}</li>
+       <button class="btn btn-primary" (click)="btnOpen(account.id)">Edit</button>
+       <button class="btn btn-primary" (click)="editRout(account.id)">Edit1</button>
+       <button class="btn btn-primary"  (click)="btnDelete(account.id)" >Delete</button><hr>
+    </a>
+  </ul>
+  <div ngClass='absolute div one' *ngIf="showSecret && employeeForEdit != undefined">
+      <label >Name</label><br>
+      <input  type="text" class="form-control" [(ngModel)]="employeeForEdit.name"><br>
+      <label >Last Name</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.lastName"><br>
+      <label >Birth Date</label><br>
+      <input type="date" class="form-control" [(ngModel)]="employeeForEdit.birthDate"><br>
+      <label>Security number</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.secNumber"><br>
+      <label>Age</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.age"><br>
+      <label>Position</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.position"><br>
+      <label>Email</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.email"><br>
+      <label>Username</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.username"><br>
+      <label>Password</label><br>
+      <input type="text" class="form-control" [(ngModel)]="employeeForEdit.password"><br>
+      <button class="btn btn-primary" (click)="btnCancel()">Cancel</button>
+      <button class="btn btn-primary" (click)="accEdit()">Save</button>
+  </div>
+</div>

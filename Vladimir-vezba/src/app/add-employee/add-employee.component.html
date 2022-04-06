@@ -1,0 +1,44 @@
+<form ngClass='size20 one div'>
+<label>Name</label><br>
+<input type="text" class="form-control" #accountName><br><br>
+<label>Last Name</label><br>
+<input type="text" class="form-control" #accountlastName><br><br>
+<label>Birth Date</label><br>
+<input type="date" class="form-control" #accountbirthDate><br><br>
+<label>Security number</label><br>
+<input type="text" class="form-control" #accountsecNumber><br><br>
+<label>Age</label><br>
+<input type="text" class="form-control" #accountage><br><br>
+<label>Position</label><br>
+<input type="text" class="form-control" #accountposition><br><br>
+<label>Email</label><br>
+<input type="text" class="form-control" #accountemail><br><br>
+<label>Username</label><br>
+<input type="text" class="form-control" #accountUsername><br><br>
+<label>Password</label><br>
+<input type="text" class="form-control" #accountPassword><br><br>
+<label >Company:</label><br>
+<input type="search" list="data" class="form-control" #accountcompany >
+ <datalist id="data">
+    <option value="1">
+    <option value="2">
+ </datalist><br><br>
+<label>Work Phone:</label><br>
+<input type="text" class="form-control" #accountworkPhone ><br><br>
+<label>Alt.Email:</label><br>
+<input type="email" class="form-control" #accountaltEmail ><br><br>
+<label >Designation:</label><br>
+<input type="text" class="form-control" #accountdesignation ><br><br>
+<label >Mobile Phone:</label><br>
+<input type="text" class="form-control" #accountmobilePhone ><br><br>
+<label >Status:</label><br>
+<input type="search" list="data1" class="form-control" #accountstatus >
+    <datalist id="data1">
+        <option value="Active">
+        <option value="Passive">
+    </datalist><br><br>
+<label>Initials:</label><br>
+<input type="text" class="form-control" #accountinitials ><br><br>
+</form><br>
+<button class="btn btn-primary" ngClass='button' (click)="btnLogin()" >Login</button>
+
