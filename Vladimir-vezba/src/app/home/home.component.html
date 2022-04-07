@@ -1,10 +1,14 @@
-<button  ngClass='button5 button6' (click)="onRout()">Sing in</button>
+<body>
+<div ngClass='topnav'>
+<button  ngClass='button5 button1' (click)="onRout()">Sing in</button>
 
 <button ngClass='button button1' (click)="onShow()">Add Employee</button>
 <button ngClass='button button1' (click)="onShow1()">Employee List</button>
+</div>
 <div *ngIf="showSecret">
 <app-add-employee (accountAdd)="onAccountAdd($event)"></app-add-employee>
 </div>
 <div *ngIf="showSecret1">
 <app-employee-list></app-employee-list>
 </div>
+</body>

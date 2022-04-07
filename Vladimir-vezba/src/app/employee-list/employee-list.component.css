@@ -1,4 +1,4 @@
-.two  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; margin: 0px 1200px 0px 20px; };
+.two  {position: absolute;top: 70px; left: 40px; border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; margin: 0px 1200px 0px 20px; background-color: #f8fafd };
 .absolute {  position: absolute;
     top: 80px;
     right: 400px;
@@ -11,3 +11,5 @@
       } 
 
 .one  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; }
+
+.hr {width: 105%; text-align:left; margin-left:-7px ; height: 0.4px; background-color: black;}

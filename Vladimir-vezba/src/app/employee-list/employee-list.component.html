@@ -14,7 +14,7 @@
      <li>Email: {{ account.email }}</li>
        <button class="btn btn-primary" (click)="btnOpen(account.id)">Edit</button>
        <button class="btn btn-primary" (click)="editRout(account.id)">Edit1</button>
-       <button class="btn btn-primary"  (click)="btnDelete(account.id)" >Delete</button><hr>
+       <button class="btn btn-primary"  (click)="btnDelete(account.id)" >Delete</button><hr ngClass='hr'>
     </a>
   </ul>
   <div ngClass='absolute div one' *ngIf="showSecret && employeeForEdit != undefined">

@@ -1,9 +1,14 @@
-<body >
- <div>
-    <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" /> 
-   <p ngClass='text1'>User Info</p>
- </div>
- <div ngClass='body1' *ngIf="account != undefined">
+<body>
+  <div ngClass='topnav'>
+  <button ngClass='button button1' (click)="onShow()">INFO</button>
+  <button ngClass='button button1' (click)="onShow1()">PASSWORD</button>
+</div>
+ <div ngClass='body1' *ngIf="account != undefined && showSecret">
+   <div ngClass='heder two11'>
+      <img ngClass='img1 heder' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" /> 
+     <p ngClass='text1 heder'>User Info</p>
+   </div>
+ <div ngClass='two1'>
  <div ngClass='div11'>
     <div ngClass='img'></div><br><br>   
     <button ngClass='button123' (click)="saveData(account)">Upload</button>
@@ -37,13 +42,29 @@
     <input type="search" list="data1" ngClass='input2' [(ngModel)]="account.status">
     <datalist id="data1">
         <option value="Active">
-        <option value="Passive">
+        <option value="Inactive">
     </datalist><br><br>
     <label ngClass='text'>Username</label><br>
     <input type="text" ngClass='input' [(ngModel)]="account.username"><br><br>
     <label ngClass='text'>Initials:</label><br>
     <input type="text" ngClass='input' [(ngModel)]="account.initials"><br><br>
  </div>
+</div>
+</div>
+<div ngClass='body11' *ngIf="account != undefined && showSecret1">
+   <div ngClass='two01'>
+   <p ngClass='text1'>Password</p>
+   <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" />
+   </div>
+   <div ngClass='two0'>
+   <div ngClass='centre'>
+   <label ngClass='text'>Password</label><br>
+    <input type="password" ngClass='input' [(ngModel)]="account.password"><br><br>
+    <label ngClass='text'>Password Confirm</label><br>
+    <input type="password" ngClass='input' [(ngModel)]="passwordConfirm"><br><br>
+    <button ngClass='button1234' (click)="savePass(account)">Save</button>
+   </div>
+</div>
 </div> 
  
 </body>

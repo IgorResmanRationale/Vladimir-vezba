@@ -1,7 +1,7 @@
 .size20 { font-size: 20px; }
-.one  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px;  margin: 0px 1200px 0px 20px; }
+.one  { position: absolute; top: 70px;border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px;   }
 .body {background-color: mistyrose;}
-.div { background-color: rgb(255, 255, 255);}
+.div { background-color: #f8fafd;}
 .button {
     position: absolute;
     top: 300px;
@@ -16,3 +16,4 @@
     font-size: 16px;
    ;
   }
+  .div1{position: absolute; top: 60px; left: 50px;}

@@ -15,11 +15,10 @@ export class EmployeeServiceService {
 
 addAccount(account: Account){
   //kreirati logiku za dodavanje id (id od poslednjeg unesenog + 1)  
-    // var element = this.accounts.indexOf(account);
-    // account.id = element++;
-      account.id = Math.floor(Math.random() * 100) + 1;
-      this.accounts.push(account)
-      console.table(this.accounts);   
+    const id = this.accounts.length
+    account.id = id
+    this.accounts.push(account)
+    console.table(this.accounts);   
 
  }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeServiceService } from '../employee-service.service';
 import { Account } from '../models/employe.model';
@@ -37,6 +37,6 @@ export class HomeComponent implements OnInit {
  onRout(){
   this.router.navigate(['/login']);
 }
-  
+
 
 }
