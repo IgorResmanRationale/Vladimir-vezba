@@ -60,5 +60,8 @@ this.router.navigate(['/']);
   }
 }
 
+backBtn(){
+  this.router.navigate(['/']);
+}
 
 }

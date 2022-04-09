@@ -9,8 +9,10 @@ import { Account } from './models/employe.model';
 export class EmployeeServiceService {
   accounts: Account[] = [
     {id: 0, name: 'Petar', lastName: 'Petrovic', birthDate: new Date("1998-07-15") , secNumber: 543251,age: 32,position: 'Student', email:'petar.petrovic@gmail.com', username: 'Pera',
-     password: 'Pera', altEmail:'petar.petrovic1@gmail.com', status: 'Active', company: '1', designaton: 'qwerty', initials: 'd2r4t5', workPhone: 555-333, mobilPhone: +381435433 }
-  ];
+     password: 'Pera', altEmail:'petar.petrovic1@gmail.com', status: 'Active', company: '1', designaton: 'qwerty', initials: 'd2r4t5', workPhone: 555-333, mobilPhone: +381435433 },
+    {id: 15, name: 'Vladimir', lastName: 'Skokin', birthDate: new Date("1998-07-14") , secNumber: 555251,age: 23,position: 'Student', email:'vladimir.skokin@gmail.com', username: 'Vladi',
+     password: '123456', altEmail:'vladimir.skokin1@gmail.com', status: 'Active', company: '2', designaton: 'fdsrty', initials: 'd2f4f3', workPhone: 555-777, mobilPhone: +381436633 }
+    ];
 
 
 addAccount(account: Account){

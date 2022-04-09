@@ -1,4 +1,4 @@
-.two  {position: absolute;top: 70px; left: 40px; border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; margin: 0px 1200px 0px 20px; background-color: #f8fafd };
+.two  {position: absolute;top: 370px; left: 40px; border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; margin: 0px 1200px 0px 20px; background-color: #f8fafd };
 .absolute {  position: absolute;
     top: 80px;
     right: 400px;
@@ -13,3 +13,74 @@
 .one  {border-style: solid; border-color: rgb(0, 0, 0); border-width: 1px; padding: 5px; }
 
 .hr {width: 105%; text-align:left; margin-left:-7px ; height: 0.4px; background-color: black;}
+
+
+.policy1{ display: flex;
+  margin-bottom: 1em;
+  padding: 10px ;
+  border-radius: 15px;
+  color: #367bdf;
+  background-color: #f4f6f9;
+  margin-bottom: 20px;
+  align-items: center;
+  align-content: center;
+  border: 1px solid #eef1f4;
+}
+
+ 
+.tabela{position: absolute;
+  top: 100px;
+  right: 350px;
+  color: grey;
+  text-align: center;
+  width:60%
+} 
+
+/* .data1{ position: absolute; left: 60px;}
+.data2{ position: absolute; left: 360px;}
+.data3{ position: absolute; left: 560px;}
+.data4{ position: absolute; left: 725px;}
+.buttonPos{position: absolute; left: 840px;}
+.buttonPos1{position: absolute; left: 950px;}
+display: flex;
+    width: 50rem;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+*/
+
+
+
+.policy {
+  flex-wrap: nowrap ;
+  display: flex;
+  
+  margin-bottom: 1em;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: white;
+  align-items: center;
+  align-content: center;
+  border: 1px solid #eef1f4;
+}
+
+.button123{
+  font-family: Arial, Helvetica, sans-serif; 
+  font-weight:	bold;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: #367cdf;
+}
+
+.button123:hover{
+  background-color: #f8fafd;
+    color: #367cdf;
+    
+}
+

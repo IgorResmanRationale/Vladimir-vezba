@@ -65,6 +65,7 @@ export class EmployeeListComponent implements OnInit {
   editRout(accountId: number){
     this.router.navigate(['/user-info/',accountId]);
   }
+
 }
 
 
