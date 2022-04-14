@@ -19,7 +19,9 @@ onSingIn(username: string, password: string,){
   const accounts = this.getAccounts();
   const acc = accounts.find( x  => x.username === username)
  if(acc != null && acc.password === password){
-  this.router.navigate(['/home/',acc.id]);
+  this.router.navigate(['/home']);
+  sessionStorage.setItem('Id',acc.id.toString())
+  sessionStorage.setItem('FullName', acc.name + ' ' + acc.lastName); 
   alert('Korisnik uspesno ulogovan')
   return;
 }

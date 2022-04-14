@@ -17,10 +17,9 @@ export class EmployeeServiceService {
 
 addAccount(account: Account){
   //kreirati logiku za dodavanje id (id od poslednjeg unesenog + 1)  
-    account.id = this.accounts.length
+    account.id = this.accounts.length;
     this.accounts.push(account)
-    console.table(this.accounts);   
-
+    console.table(this.accounts);  
  }
 
 

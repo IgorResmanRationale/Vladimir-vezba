@@ -1,6 +1,6 @@
 <body>
   <div ngClass='topnav'>
-  <button *ngIf="account != undefined"  ngClass='button button1 btn' [routerLink]="['/home/', account.id]">❮❮❮</button>
+  <button *ngIf="account != undefined"  ngClass='button button1 btn' (click)="onBack()">❮❮❮</button>
   <button ngClass='button button1' (click)="onShow()">INFO</button>
   <button ngClass='button button1' (click)="onShow1()">PASSWORD</button>
 </div>

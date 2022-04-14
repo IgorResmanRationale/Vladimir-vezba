@@ -1,3 +1,4 @@
+
 export class Account {
   id!: number ;
   name!: string ;
@@ -14,3 +15,4 @@ export class Account {
   workPhone!: number;
   mobilPhone!: number;
 }
+

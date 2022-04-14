@@ -6,7 +6,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.divPosition{display: flex; justify-content: end; background-color: #367cdf;}
+.divPosition{display: flex; justify-content: end; background-color: #367cdf; align-items: baseline;}
 
 .dviName{
   background-color: #367cdf;
@@ -49,11 +49,11 @@ body {
 
 
   .button5 {
-    position: sticky; left: 100%;
+    /* position: sticky; left: 100%; */
     background-color: #367cdf; 
     border: none;
     color: white;
-    padding: 7px 32px;
+    padding: 10px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

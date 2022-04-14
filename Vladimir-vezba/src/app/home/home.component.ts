@@ -23,16 +23,9 @@ export class HomeComponent implements OnInit {
     private service1: LoginServiceService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.setAccountId();
-    this.account = this.service.accounts.find(x => x.id == this.accountId);
+
   }
 
-  setAccountId()
-  {
-    this.route.params.subscribe((params: any) => {
-      this.accountId = +params.id
-    })
-  }
 
   onShow(){
     this.showSecret = true;
@@ -49,11 +42,16 @@ export class HomeComponent implements OnInit {
    alert("Zaposleni je uspesno kreiran");
   }
 
-  
- onRout(username: string, password: string){
-  const accounts = this.service1.onSingIn( username, password);
-  console.log(accounts)
+ onLogin(){
+  this.router.navigate(['/']);
+  sessionStorage.removeItem('ID');
+ }
+
+ getData(){
+  return sessionStorage.getItem('FullName');
 }
+
+  
 
 
 }

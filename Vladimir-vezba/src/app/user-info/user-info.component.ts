@@ -34,7 +34,7 @@ export class UserInfoComponent implements OnInit {
     let itemIndex = this.accounts.findIndex(item => item.id == account.id);
 this.accounts[itemIndex] = account;
 alert('Zaposleni je uspesno izmenjen')
-this.router.navigate(['/home/',account.id]);
+this.router.navigate(['/home']);
 }
 
 onShow(){
@@ -54,11 +54,14 @@ savePass(account: Account){
     let itemIndex = this.accounts.findIndex(item => item.id == account.id);
 this.accounts[itemIndex] = account;
 alert('Lozinka je uspesno izmenjena')
-this.router.navigate(['/home/',account.id]);
+this.router.navigate(['/home']);
   } else {
     alert('Morate potvrditi lozinku')
   }
 }
 
+onBack(){
+  this.router.navigate(['/home']);
+}
 
 }

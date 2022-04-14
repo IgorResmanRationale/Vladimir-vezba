@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output} from '@angular/core';
 import { Account } from '../models/employe.model';
+import { EmployeeServiceService } from '../employee-service.service';
 
 
 @Component({
@@ -23,14 +24,15 @@ export class AddEmployeeComponent implements OnInit {
   @ViewChild('accountworkPhone') accountworkPhoneRef: ElementRef | undefined;
   @ViewChild('accountmobilPhone') accountmobilPhoneRef: ElementRef | undefined;
   @Output() accountAdd = new EventEmitter <Account>();
-  
+  accounts: Account[] = [];
 
-  constructor() {}
+  constructor(private service: EmployeeServiceService) {}
 
   ngOnInit(): void {
   }
 
   btnLogin(){
+    const idAcc = this.accounts.length
     const ingId=this.accountIdRef?.nativeElement.value;
     const ingName=this.accountNameRef?.nativeElement.value;
     const inglastName=this.accountlastNameRef?.nativeElement.value;
@@ -47,6 +49,8 @@ export class AddEmployeeComponent implements OnInit {
     const ingmobilPhone=this.accountmobilPhoneRef?.nativeElement.value;
     const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingPosition, ingemail, ingUsername,
       ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone);
+      // sessionStorage.setItem('id', idAcc);
+
   
     this.accountAdd.emit(newAccount);
     
