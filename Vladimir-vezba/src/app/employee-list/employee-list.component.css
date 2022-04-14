@@ -15,7 +15,7 @@
 .hr {width: 105%; text-align:left; margin-left:-7px ; height: 0.4px; background-color: black;}
 
 
-.policy1{ display: flex;
+.policy1{ display: flex; width: 890px;
   margin-bottom: 1em;
   padding: 10px ;
   border-radius: 15px;
@@ -29,7 +29,7 @@
 
  
 .tabela{position: absolute;
-  top: 100px;
+  top: 150px;
   right: 350px;
   color: grey;
   text-align: center;
@@ -54,7 +54,7 @@ display: flex;
 .policy {
   flex-wrap: nowrap ;
   display: flex;
-  
+  width: 880px;
   margin-bottom: 1em;
   padding: 15px;
   border-radius: 15px;
@@ -83,4 +83,22 @@ display: flex;
     color: #367cdf;
     
 }
+
+
+/* .table1{
+  position: absolute; top: 45%; left: 30%; width: 700px;
+}
+
+.tr1{
+  display: flex; justify-content: space-around;
+  align-content: flex-start;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.tr2{
+  display: flex; justify-content: space-around;
+  align-content: flex-start;
+  text-align: center;
+} */
 

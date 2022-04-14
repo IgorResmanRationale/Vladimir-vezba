@@ -2,17 +2,30 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { PreloadAllModules } from '@angular/router';
 import { EmployeeServiceService } from './employee-service.service';
 import { Account } from './models/employe.model';
-
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
   
-    constructor(private service: EmployeeServiceService) {}
+    constructor(private service: EmployeeServiceService, private router: Router) {}
 
 getAccounts(){
     return this.service.accounts
 }
+
+onSingIn(username: string, password: string,){
+  const accounts = this.getAccounts();
+  const acc = accounts.find( x  => x.username === username)
+ if(acc != null && acc.password === password){
+  this.router.navigate(['/home/',acc.id]);
+  alert('Korisnik uspesno ulogovan')
+  return;
+}
+ else
+   alert('Korisnik ne postoji u sistemu')
+}
+
 
 }

@@ -11,9 +11,6 @@ export class AddEmployeeComponent implements OnInit {
   @ViewChild('accountId') accountIdRef: ElementRef | undefined;
   @ViewChild('accountName') accountNameRef: ElementRef | undefined;
   @ViewChild('accountlastName') accountlastNameRef: ElementRef | undefined;
-  @ViewChild('accountbirthDate') accountbirthDateRef: ElementRef | undefined;
-  @ViewChild('accountsecNumber') accountsecNumberRef: ElementRef | undefined;
-  @ViewChild('accountage') accountageRef: ElementRef | undefined;
   @ViewChild('accountposition') accountpositionRef: ElementRef | undefined;
   @ViewChild('accountemail') accountemailRef: ElementRef | undefined;
   @ViewChild('accountUsername') accountUsernameRef: ElementRef | undefined;
@@ -37,9 +34,6 @@ export class AddEmployeeComponent implements OnInit {
     const ingId=this.accountIdRef?.nativeElement.value;
     const ingName=this.accountNameRef?.nativeElement.value;
     const inglastName=this.accountlastNameRef?.nativeElement.value;
-    const ingbirthDate=this.accountbirthDateRef?.nativeElement.value;
-    const ingsecNumber=this.accountsecNumberRef?.nativeElement.value;
-    const ingage=this.accountageRef?.nativeElement.value;
     const ingPosition=this.accountpositionRef?.nativeElement.value;
     const ingemail=this.accountemailRef?.nativeElement.value;
     const ingUsername=this.accountUsernameRef?.nativeElement.value;
@@ -51,21 +45,18 @@ export class AddEmployeeComponent implements OnInit {
     const inginitials=this.accountinitialsRef?.nativeElement.value;
     const ingworkPhone=this.accountworkPhoneRef?.nativeElement.value;
     const ingmobilPhone=this.accountmobilPhoneRef?.nativeElement.value;
-    const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingbirthDate, ingsecNumber, ingage, ingPosition, ingemail, ingUsername,
+    const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingPosition, ingemail, ingUsername,
       ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone);
   
     this.accountAdd.emit(newAccount);
     
   }
-  populateAccountData(ingId: any ,ingName: any, inglastName: any, ingbirthDate: any, ingsecNumber: any, ingage: any, ingPosition: any, ingemail: any, ingUsername: string,
+  populateAccountData(ingId: any ,ingName: any, inglastName: any, ingPosition: any, ingemail: any, ingUsername: string,
      ingPassword: string, ingaltEmail: any, ingstatus: any,ingcompany: any,ingdesignaton: any,inginitials: any,ingworkPhone: any,ingmobilPhone: any,): Account {
     const newAccount = new Account();
     newAccount.id = ingId;
     newAccount.name = ingName;
     newAccount.lastName = inglastName;
-    newAccount.birthDate = ingbirthDate;
-    newAccount.secNumber = ingsecNumber;
-    newAccount.age = ingage;
     newAccount.position = ingPosition;
     newAccount.email = ingemail;
     newAccount.username = ingUsername;

@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { EmployeeServiceService } from '../employee-service.service';
 import { Account } from '../models/employe.model';
+import { LoginServiceService } from '../LoginService.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,26 @@ import { Account } from '../models/employe.model';
 })
 export class HomeComponent implements OnInit {
 
+  // accounts: Account[] = [];
+  account!: Account | undefined;
+  accountId!: number;
   showSecret = false;
   showSecret1 = false;
+  
 
-  constructor(private service: EmployeeServiceService, private router: Router) {}
+  constructor(private service: EmployeeServiceService, private router: Router, 
+    private service1: LoginServiceService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.setAccountId();
+    this.account = this.service.accounts.find(x => x.id == this.accountId);
+  }
+
+  setAccountId()
+  {
+    this.route.params.subscribe((params: any) => {
+      this.accountId = +params.id
+    })
   }
 
   onShow(){
@@ -34,8 +50,9 @@ export class HomeComponent implements OnInit {
   }
 
   
- onRout(){
-  this.router.navigate(['/login']);
+ onRout(username: string, password: string){
+  const accounts = this.service1.onSingIn( username, password);
+  console.log(accounts)
 }
 
 

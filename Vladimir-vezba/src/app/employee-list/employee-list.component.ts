@@ -31,19 +31,19 @@ export class EmployeeListComponent implements OnInit {
    alert("Zaposleni je uspesno kreiran");
    
   }
-  btnOpen(accountId: number): Account{
-    this.showSecret = true;
-    const employee = this.accounts.find(x => x.id == accountId);
-    if(employee)
-    {
-      console.log(employee.birthDate);
-      return this.employeeForEdit = Object.assign({}, employee); //clone without reference
-    }
+  // btnOpen(accountId: number): Account{
+  //   this.showSecret = true;
+  //   const employee = this.accounts.find(x => x.id == accountId);
+  //   if(employee)
+  //   {
+  //     console.log(employee.id);
+  //     return this.employeeForEdit = Object.assign({}, employee); //clone without reference
+  //   }
      
-      return {} as Account
+  //     return {} as Account
 
  
-  }
+  // }
 
 
   btnDelete(accountId: number)

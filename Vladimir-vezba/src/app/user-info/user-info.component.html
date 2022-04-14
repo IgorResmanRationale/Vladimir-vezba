@@ -1,71 +1,70 @@
 <body>
   <div ngClass='topnav'>
-  <button ngClass='button button1 btn' (click)="backBtn()">❮❮❮</button>
+  <button *ngIf="account != undefined"  ngClass='button button1 btn' [routerLink]="['/home/', account.id]">❮❮❮</button>
   <button ngClass='button button1' (click)="onShow()">INFO</button>
   <button ngClass='button button1' (click)="onShow1()">PASSWORD</button>
 </div>
- <div ngClass='body1' *ngIf="account != undefined && showSecret">
-   <div ngClass='two11'>
-      <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" /> 
-     <p ngClass='text1'>User Info</p>
+ <div ngClass='div1P' *ngIf="account != undefined && showSecret">
+   <div ngClass='txtDiv'> 
+     <p ngClass='textTitle'>User Info</p>
    </div>
- <div ngClass='two1'>
- <div ngClass='div11'>
-    <div ngClass='img'></div><br><br>   
-    <button ngClass='button123' (click)="saveData(account)">Upload</button>
+ <div ngClass='dataDiv1'>
+ <div ngClass='div1'><br>
+    <div ngClass='img'></div><br>  
+    <button ngClass='buttonInfo' (click)="saveData(account)">Upload</button>
  </div>
- <div ngClass='div22'>
+ <div ngClass='div2'>
     <label ngClass='text'>Email</label><br>
-    <input type="email" ngClass='input' [(ngModel)]="account.email"><br><br>
+    <input type="email" ngClass='inputInfo' [(ngModel)]="account.email"><br><br>
     <label ngClass='text'>First Name:</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.name"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.name"><br><br>
     <label ngClass='text'>Company:</label><br>
-    <input type="search" list="data" ngClass='input2' [(ngModel)]="account.company">
+    <input type="search" list="data" ngClass='inputInfo2' [(ngModel)]="account.company">
     <datalist id="data">
         <option value="1">
         <option value="2">
     </datalist><br><br>
     <label ngClass='text'>Work Phone:</label><br>
-    <input type="text" ngClass='input'  [(ngModel)]="account.workPhone">
+    <input type="text" ngClass='inputInfo'  [(ngModel)]="account.workPhone">
  </div>
- <div ngClass='div33'>
+ <div ngClass='div3'>
     <label ngClass='text'>Alt. Email:</label><br>
-    <input type="email" ngClass='input' [(ngModel)]="account.altEmail"><br><br>
+    <input type="email" ngClass='inputInfo' [(ngModel)]="account.altEmail"><br><br>
     <label ngClass='text'>Last Name:</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.lastName"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.lastName"><br><br>
     <label ngClass='text'>Designation:</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.designaton"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.designaton"><br><br>
     <label ngClass='text'>Mobile Phone:</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.mobilPhone"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.mobilPhone"><br><br>
  </div>
- <div ngClass='div44'>
+ <div ngClass='div4'>
+    <div ngClass='div44'>
     <label ngClass='text'>Status:</label><br>
-    <input type="search" list="data1" ngClass='input2' [(ngModel)]="account.status">
+    <input type="search" list="data1" ngClass='inputInfo2' [(ngModel)]="account.status">
     <datalist id="data1">
         <option value="Active">
         <option value="Inactive">
     </datalist><br><br>
     <label ngClass='text'>Username</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.username"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.username"><br><br>
     <label ngClass='text'>Initials:</label><br>
-    <input type="text" ngClass='input' [(ngModel)]="account.initials"><br><br>
+    <input type="text" ngClass='inputInfo' [(ngModel)]="account.initials"><br><br></div>
  </div>
 </div>
 </div>
-<div ngClass='body11' *ngIf="account != undefined && showSecret1">
-   <div ngClass='two01'>
-   <p ngClass='text1'>Password</p>
-   <img ngClass='img1' src="https://lh3.googleusercontent.com/e2G_foSRWcVeCQ6z1JkrBOlVsRszRCBssCWQZcNJjFvHhaLnUMMBghjSmkMrI17HTDEngWH4End0Y0DADBfxyzYGUCCLH_QZ_nHcR-_d4ZBHYJFcukqRS1B6NipvKSRgSapDMcDK=w2400" />
-   </div>
-   <div ngClass='two0'>
-   <div ngClass='centre'>
-   <label ngClass='text'>Password</label><br>
-    <input type="password" ngClass='input' [(ngModel)]="account.password"><br><br>
-    <label ngClass='text'>Password Confirm</label><br>
-    <input type="password" ngClass='input' [(ngModel)]="passwordConfirm"><br><br>
-    <button ngClass='button1234' (click)="savePass(account)">Save</button>
-   </div>
-</div>
-</div> 
+
  
+<div ngClass='div1P' *ngIf="account != undefined && showSecret1">
+   <div ngClass='txtDiv'>
+   <p ngClass='textTitle'>Password</p>
+   </div>
+   <div ngClass='dataDiv'><br><br>
+   <label ngClass='textInput'>Password</label><br>
+    <input type="password" ngClass='inputPass' [(ngModel)]="account.password"><br><br>
+    <label ngClass='textInput'>Password Confirm</label><br>
+    <input type="password" ngClass='inputPass' [(ngModel)]="passwordConfirm"><br><br>
+    <button ngClass='buttonPass' (click)="savePass(account)">Save</button>
+   </div>
+</div> 
+
 </body>

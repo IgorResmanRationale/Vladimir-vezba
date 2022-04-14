@@ -2,9 +2,6 @@ export class Account {
   id!: number ;
   name!: string ;
   lastName!: string;
-  birthDate!: Date; 
-  secNumber!: number;
-  age!: number;
   position!: string;
   email!: string;
   username!: string;

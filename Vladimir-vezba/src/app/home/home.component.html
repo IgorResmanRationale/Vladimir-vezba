@@ -1,9 +1,12 @@
 <body>
+<div ngClass='divPosition'>
+<div ngClass='dviName' *ngIf="account"> 
+ <p>{{account.name}} {{account.lastName}}</p>
+</div> </div>
 <div ngClass='topnav'>
-<button  ngClass='button5 button1' (click)="onRout()">Sing in</button>
-
 <button ngClass='button button1' (click)="onShow()">Add Employee</button>
 <button ngClass='button button1' (click)="onShow1()">Employee List</button>
+
 </div>
 <div *ngIf="showSecret">
 <app-add-employee (accountAdd)="onAccountAdd($event)"></app-add-employee>
