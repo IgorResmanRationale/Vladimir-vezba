@@ -22,6 +22,7 @@ onSingIn(username: string, password: string,){
   this.router.navigate(['/home']);
   sessionStorage.setItem('Id',acc.id.toString())
   sessionStorage.setItem('FullName', acc.name + ' ' + acc.lastName); 
+  sessionStorage.setItem('Permission', acc.profile.permission); 
   alert('Korisnik uspesno ulogovan')
   return;
 }

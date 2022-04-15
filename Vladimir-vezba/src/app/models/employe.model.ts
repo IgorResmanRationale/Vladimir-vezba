@@ -1,3 +1,4 @@
+import { getAttrsForDirectiveMatching } from "@angular/compiler/src/render3/view/util";
 
 export class Account {
   id!: number ;
@@ -14,5 +15,19 @@ export class Account {
   initials!: string;
   workPhone!: number;
   mobilPhone!: number;
+  profile! : Profile;
 }
+
+export class Profile{
+  name!:string;
+  permission!: string;
+  }
+
+
+
+
+
+
+
+
 

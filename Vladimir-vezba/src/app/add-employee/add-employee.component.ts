@@ -32,7 +32,6 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   btnLogin(){
-    const idAcc = this.accounts.length
     const ingId=this.accountIdRef?.nativeElement.value;
     const ingName=this.accountNameRef?.nativeElement.value;
     const inglastName=this.accountlastNameRef?.nativeElement.value;
@@ -48,8 +47,7 @@ export class AddEmployeeComponent implements OnInit {
     const ingworkPhone=this.accountworkPhoneRef?.nativeElement.value;
     const ingmobilPhone=this.accountmobilPhoneRef?.nativeElement.value;
     const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingPosition, ingemail, ingUsername,
-      ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone);
-      // sessionStorage.setItem('id', idAcc);
+      ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone, );
 
   
     this.accountAdd.emit(newAccount);
@@ -72,6 +70,7 @@ export class AddEmployeeComponent implements OnInit {
     newAccount.initials = inginitials;
     newAccount.workPhone = ingworkPhone;
     newAccount.mobilPhone = ingmobilPhone;
+
 
     return newAccount;
   }
