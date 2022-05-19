@@ -1,71 +1,71 @@
 <body>
-<div ngClass='centre'>
-<div ngClass='divAdd'>   
- <div ngClass='divInput'>
-<label>First Name</label>
-<input type="text" class="form-control" #accountName>
-</div>
-<div ngClass='divInput'>
-<label>Last Name</label>
-<input type="text" class="form-control" #accountlastName>
-</div>
-<div ngClass='divInput'> 
-<label>Position</label>
-<input type="text" class="form-control" #accountposition>
-</div>
-<div ngClass='divInput'>
-<label>Email</label>
-<input type="text" class="form-control" #accountemail>
-</div>
-<div ngClass='divInput'>
-<label>Username</label>
-<input type="text" class="form-control" #accountUsername>
-</div>
-<div ngClass='divInput'>
-<label>Password</label>
-<input type="password" class="form-control" #accountPassword>
-</div>
-<div ngClass='divInput'>
-<label >Company:</label>
-<input type="search" list="data" class="form-control" #accountcompany ngClass='input1'>
- <datalist id="data">
-    <option value="1">
-    <option value="2">
- </datalist><br><br>
-</div>
-<div ngClass='divInput'>
-<label>Work Phone:</label>
-<input type="text" class="form-control" #accountworkPhone >
-</div>
-<div ngClass='divInput'>
-<label>Alt.Email:</label>
-<input type="email" class="form-control" #accountaltEmail >
-</div>
-<div ngClass='divInput'>
-<label >Designation:</label>
-<input type="text" class="form-control" #accountdesignation >
-</div>
-<div ngClass='divInput'>
-<label >Mobile Phone:</label>
-<input type="text" class="form-control" #accountmobilePhone >
-</div>
-<div ngClass='divInput'>
-<label >Status:</label>
-<input type="search" list="data1" class="form-control" #accountstatus ngClass='input1'>
-    <datalist id="data1">
-        <option value="Active">
-        <option value="Inactive">
-    </datalist>
-</div>
-<div ngClass='divInput'> 
-<label>Initials:</label>
-<input type="text" class="form-control" #accountinitials >
-</div>
-<div ngClass='divInput' > 
-    <!-- <button class="btn btn-primary" ngClass='button' (click)="btnLogin()" >Add</button></div> -->
-    <button class="btn btn-primary" ngClass='button' md-raised-button type="submit" [disabled]="(addObservable | async)" (click)="obs()">Add</button></div>
-</div>
-</div>
+    <div ngClass='centre'>
+        <div ngClass='divAdd'>
+            <div ngClass='divInput'>
+                <label>First Name</label>
+                <input type="text" class="form-control" #accountName>
+            </div>
+            <div ngClass='divInput'>
+                <label>Last Name</label>
+                <input type="text" class="form-control" #accountlastName>
+            </div>
+            <div ngClass='divInput'>
+                <label>Position</label>
+                <input type="text" class="form-control" #accountposition>
+            </div>
+            <div ngClass='divInput'>
+                <label>Email</label>
+                <input type="text" class="form-control" #accountemail>
+            </div>
+            <div ngClass='divInput'>
+                <label>Username</label>
+                <input type="text" class="form-control" #accountUsername>
+            </div>
+            <div ngClass='divInput'>
+                <label>Password</label>
+                <input type="password" class="form-control" #accountPassword>
+            </div>
+            <div ngClass='divInput'>
+                <label>Company:</label>
+                <input type="search" list="data" class="form-control" #accountcompany ngClass='input1'>
+                <datalist id="data">
+                    <option value="1">
+                    <option value="2">
+                </datalist><br><br>
+            </div>
+            <div ngClass='divInput'>
+                <label>Work Phone:</label>
+                <input type="text" class="form-control" #accountworkPhone>
+            </div>
+            <div ngClass='divInput'>
+                <label>Alt.Email:</label>
+                <input type="email" class="form-control" #accountaltEmail>
+            </div>
+            <div ngClass='divInput'>
+                <label>Designation:</label>
+                <input type="text" class="form-control" #accountdesignation>
+            </div>
+            <div ngClass='divInput'>
+                <label>Mobile Phone:</label>
+                <input type="text" class="form-control" #accountmobilePhone>
+            </div>
+            <div ngClass='divInput'>
+                <label>Status:</label>
+                <input type="search" list="data1" class="form-control" #accountstatus ngClass='input1'>
+                <datalist id="data1">
+                    <option value="Active">
+                    <option value="Inactive">
+                </datalist>
+            </div>
+            <div ngClass='divInput'>
+                <label>Initials:</label>
+                <input type="text" class="form-control" #accountinitials>
+            </div>
+            <div ngClass='divInput'>
+                <!-- <button class="btn btn-primary" ngClass='button' (click)="btnLogin()" >Add</button></div> -->
+                <button class="btn btn-primary" ngClass='button' md-raised-button type="submit"
+                    [disabled]="(addObservable | async)" (click)="obs()">Add</button>
+            </div>
+        </div>
+    </div>
 </body>
-
-
