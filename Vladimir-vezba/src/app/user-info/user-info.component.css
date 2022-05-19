@@ -7,150 +7,159 @@ body {
   background-size: cover;
 }
 
-.div1P{ position: sticky; top: 10%; }
-
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-}
-
-.txtDiv{border-top: solid; border-left: solid; border-right: solid;
-  border-color: rgb(206, 203, 203); border-width: 1px; width: 1150px; height: 40px;
-  background-color: #ffffff; border-top-left-radius: 10px; border-top-right-radius: 10px;
-  margin: auto;
-}
-.dataDiv1{border-bottom: solid; border-left: solid; border-right: solid;
-  border-color: rgb(206, 203, 203); border-width: 1px; width: 1150px; height: 325px;
-  background-color: #f8fafd; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
-  margin: auto;
-}
-
-.dataDiv{border-bottom: solid; border-left: solid; border-right: solid;
-  border-color: rgb(206, 203, 203); border-width: 1px; width: 1150px; height: 210px;
-  background-color: #f8fafd; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
-  margin: auto;
-}
-
-.textTitle{
-  font-family: Arial, Helvetica, sans-serif;
-font-style:	normal;
-font-weight:	bold;
-color: #000000;
-position: relative; left: 60px; 
-}
-
-.textInput{font-family: Arial, Helvetica, sans-serif;
-  font-style:	normal;
-  font-weight:	normal;
-  color: #a1a1a1;  
-  position: relative; left: 30px;  
-}
-
-.inputPass{width: 23%;
-  border: 1px solid #a1a1a1;
-  padding: 3px ;
-  border-radius: 3px;
-  position: relative; left: 30px;  
-}
-
-.buttonPass{position: relative; left: 30px;  
-  font-family: Arial, Helvetica, sans-serif; font-weight:	bold;font-size: 14px;
-  display: flex; flex-direction: column; align-items: center; padding: 9px 20px;
-   border-radius: 10px; border: none; color: #fff; background: #367cdf;
-}
-
-.buttonInfo{position: relative; left: 8px;  
-  font-family: Arial, Helvetica, sans-serif; font-weight:	bold;font-size: 14px;
-  display: flex; flex-direction: column; align-items: center; padding: 9px 20px;
-   border-radius: 10px; border: none; color: #fff; background: #367cdf;
-}
-
-.div1{position: relative; left: 20px; top: 11px; width: 110px;}
-.div2{position: relative; left: 150px; bottom: 146px; width: 290px;}
-.div3{position: relative; left: 450px; bottom: 364px; width: 290px;}
-.div4{position: relative; left: 750px; bottom: 600px; width: 290px;}
-
-.inputInfo{width: 92%;
-  border: 1px solid #a1a1a1;
-  padding: 3px ;
-  border-radius: 3px;
-}
-
-.inputInfo2{width: 94%;
-  border: 1px solid #a1a1a1;
-  padding: 3px ;
-  border-radius: 3px;}
-
-  .topnav {
-    background-color: #ffffff;
-    overflow: hidden;
-  }
-  
-  
-  .button {
-    background-color: #ffffff; 
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-  }
-  
-  
-  .button1 {
-    background-color: #ffffff; 
-    color: rgb(0, 0, 0); 
-    
-  }
-  
-  .button1:hover {
-    background-color: white;
-    color: #367cdf;
-    border-bottom: 2px solid #367cdf;
-  }
-  
-  .button1:focus{
-    background-color: white;
-    color: #367cdf;
-    border-bottom: 2px solid #367cdf; 
-  }
-
-  .text{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style:	normal;
-    font-weight:	normal;
-    color: #a1a1a1;
-  }
-
-  .img {
-    border-radius: 50%;
-    border: 2px solid #4B91F7;
-    width: 100px;
-    height: 100px
-  }
-
- /* .divOdInputa{ background: lightblue;
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;}
-
-  .body2{    display: flex;
-    justify-content: center;}
-
-  .divSlika{    display: flex;
-    width: 100px;
-    height: 400px;
-    background-color: antiquewhite;
+  .div9{display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-direction: column} */
+    margin: 50px 0px 0px 0px;}
 
-  /* .divInput{width: 20px; background-color: gray; height: 5px;} */
+  .txtDiv1{border-top: solid; border-left: solid; border-right: solid;
+      border-color: rgb(206, 203, 203); border-width: 1px; width: 78%; height: 40px;
+      background-color: #ffffff; border-top-left-radius: 10px; border-top-right-radius: 10px;
+      margin: auto; max-width: 880px;
+    }
+
+  .dataDiv11{border-bottom: solid; border-left: solid; border-right: solid;
+      border-color: rgb(206, 203, 203); border-width: 1px; width: 78%; height: 325px;
+      background-color: #f8fafd; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+      margin: auto;  display: flex;
+      flex-direction: row; max-width: 880px;
+  }
+
+  .dataDiv00{border-bottom: solid; border-left: solid; border-right: solid;
+    border-color: rgb(206, 203, 203); border-width: 1px; width: 78%; height: 210px;
+    background-color: #f8fafd; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+    margin: auto; max-width: 880px;
+  }
+
+  .textTitle1{
+      font-family: Arial, Helvetica, sans-serif;
+    font-style:	normal;
+    font-weight:	bold;
+    color: #000000;
+    margin-left: 72px;
+  }
+
+  .buttonInfo1{margin: 0px 7px 0px 36px;
+    font-family: Arial, Helvetica, sans-serif; font-weight:	bold;font-size: 14px;
+     padding: 9px 20px; border-radius: 10px; border: none; color: #fff; background: #367cdf;
+  }
+
+  .div99{    width: 140px;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    margin: 33px 0px 0px 0px;}
+
+    .img1 {
+      border-radius: 50%;
+      border: 2px solid #4B91F7;
+      width: 100px;
+      height: 100px;
+      margin-left: 30px;
+    }
+
+    .text{
+      font-family: Arial, Helvetica, sans-serif;
+      font-style:	normal;
+      font-weight:	normal;
+      color: #a1a1a1;
+    }
+
+    .divAll{ display: flex; flex-direction: row; }
+    
+    .divInfo{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 30px 90px 30px 17px;
+      height: 80%;
+    }
+
+    .divPos{
+      width: 32%;
+      height: 46px;
+    }
+
+    .divBott{display: flex;
+      justify-content: space-between;
+      width: 66%;}
+
+      .divPos1{
+        width: 49%;
+    height: 46px;
+      }
+
+     .textInput1{font-family: Arial, Helvetica, sans-serif;
+        font-style:	normal;
+        font-weight:	normal;
+        color: #a1a1a1;  
+        
+      }
+      
+      .inputPass1{width: 23%;
+        border: 1px solid #a1a1a1;
+        padding: 3px ;
+        border-radius: 3px;
+  
+      }
+      .inputPass2{width: 200px;
+        border: 1px solid #a1a1a1;
+        padding: 3px ;
+        border-radius: 3px;
+  
+      }
+
+    .divP{   margin: 20px 0px 0px 33px;}
+
+    .buttonPass{
+      font-family: Arial, Helvetica, sans-serif; font-weight:	bold;font-size: 14px;
+      display: flex; flex-direction: column; align-items: center; padding: 9px 20px;
+       border-radius: 10px; border: none; color: #fff; background: #367cdf;
+    }
+
+    .topnav {
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    
+    
+    .button {
+      background-color: #ffffff; 
+      border: none;
+      color: rgb(0, 0, 0);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      transition-duration: 0.4s;
+    }
+    
+    
+    .button1 {
+      background-color: #ffffff; 
+      color: rgb(0, 0, 0); 
+      
+    }
+    
+    .button1:hover {
+      background-color: white;
+      color: #367cdf;
+      border-bottom: 3px solid #367cdf;
+      
+    }
+    
+    .button1:focus{
+      background-color: white;
+      color: #367cdf;
+      border-bottom: 3px solid #367cdf; 
+      
+    }
+  
+
+
+
+    

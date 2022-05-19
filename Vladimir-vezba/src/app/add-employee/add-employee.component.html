@@ -1,4 +1,4 @@
-
+<body>
 <div ngClass='centre'>
 <div ngClass='divAdd'>   
  <div ngClass='divInput'>
@@ -61,9 +61,11 @@
 <label>Initials:</label>
 <input type="text" class="form-control" #accountinitials >
 </div>
-<div ngClass='divInput'> 
-    <button class="btn btn-primary" ngClass='button' (click)="btnLogin()" >Add</button></div>
+<div ngClass='divInput' > 
+    <!-- <button class="btn btn-primary" ngClass='button' (click)="btnLogin()" >Add</button></div> -->
+    <button class="btn btn-primary" ngClass='button' md-raised-button type="submit" [disabled]="(addObservable | async)" (click)="obs()">Add</button></div>
 </div>
 </div>
+</body>
 
 

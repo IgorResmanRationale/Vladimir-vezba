@@ -16,6 +16,7 @@ export class UserInfoComponent implements OnInit {
   accounts: Account[] = [];
   account!: Account | undefined;
   accountId!: number;
+  accountName!: string;
   constructor(private service: EmployeeServiceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,45 +24,44 @@ export class UserInfoComponent implements OnInit {
     this.account = this.service.accounts.find(x => x.id == this.accountId);
   }
 
-  setAccountId()
-  {
+
+
+  setAccountId() {
     this.route.params.subscribe((params: any) => {
       this.accountId = +params.id
     })
   }
 
-  saveData(account: Account){
+  saveData(account: Account) {
     let itemIndex = this.accounts.findIndex(item => item.id == account.id);
-this.accounts[itemIndex] = account;
-alert('Zaposleni je uspesno izmenjen')
-this.router.navigate(['/home']);
-}
-
-onShow(){
-  this.showSecret = true;
-  this.showSecret1 = false;
-}
-
-onShow1(){
-  this.showSecret1 = true;
-  this.showSecret = false;
-}
-
-
-
-savePass(account: Account){
-  if(account.password == this.passwordConfirm){
-    let itemIndex = this.accounts.findIndex(item => item.id == account.id);
-this.accounts[itemIndex] = account;
-alert('Lozinka je uspesno izmenjena')
-this.router.navigate(['/home']);
-  } else {
-    alert('Morate potvrditi lozinku')
+    this.accounts[itemIndex] = account;
+    alert('Zaposleni je uspesno izmenjen')
+    this.router.navigate(['/home']);
   }
-}
 
-onBack(){
-  this.router.navigate(['/home']);
-}
+  onShow() {
+    this.showSecret = true;
+    this.showSecret1 = false;
+  }
+
+  onShow1() {
+    this.showSecret1 = true;
+    this.showSecret = false;
+  }
+
+  savePass(account: Account) {
+    if (account.password == this.passwordConfirm) {
+      let itemIndex = this.accounts.findIndex(item => item.id == account.id);
+      this.accounts[itemIndex] = account;
+      alert('Lozinka je uspesno izmenjena')
+      this.router.navigate(['/home']);
+    } else {
+      alert('Morate potvrditi lozinku')
+    }
+  }
+
+  onBack() {
+    this.router.navigate(['/home']);
+  }
 
 }

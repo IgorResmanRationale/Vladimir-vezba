@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginServiceService } from './LoginService.service';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 
@@ -25,7 +26,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     AddEmployeeComponent,
     HomeComponent,
     LoginComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    MainPageComponent
     
   ],
   imports: [

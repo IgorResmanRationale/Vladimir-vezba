@@ -9,9 +9,5 @@ export class AppComponent {
 
   constructor() { }
   
-  showRegistertationMessage = false;
-  boolShow(boolshow: boolean){
-    this.showRegistertationMessage = boolshow;
- }
 
 }

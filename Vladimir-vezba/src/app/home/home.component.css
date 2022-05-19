@@ -1,20 +1,28 @@
-body {
+/* body {
   background-color: #ecf1f5;
   width:100%;
   height:100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.divPosition{display: flex; justify-content: end; background-color: #367cdf; align-items: baseline;}
+} */
+.divPosition{display: flex;
+  justify-content: right;
+  background-color: #367cdf;
+  align-items: stretch;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: wrap;}
 
 .dviName{
   background-color: #367cdf;
-    border: none;
-    color: white;
-    width: 9%;
-    height: 28px;
-    font-size: 15px;}
+  border: none;
+  color: white;
+  width: 85px;
+  height: 28px;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;}
 
 .button {
     background-color: #367cdf; 
@@ -53,7 +61,7 @@ body {
     background-color: #367cdf; 
     border: none;
     color: white;
-    padding: 10px 32px;
+    padding:7px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -66,6 +74,60 @@ body {
   .topnav {
     background-color: #367cdf;
     overflow: hidden;
+    display: flex;
   }
 
+  .p1{display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;}
+
+  @media only screen and (max-width: 500px) {
+    .divPosition{    display: flex;
+      background-color: #367cdf;
+      flex-wrap: wrap-reverse;
+      flex-direction: column;
+      width: 100%;}
+
+  .dviName{
+    background-color: #367cdf;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+   }
+
+  .button5 {
+    background-color: #367cdf;
+    border: none;
+    color: white;
+    padding: 7px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 100%;
+  }
+  
+
+  .div1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   }
+
+
+  
+  }
+
+
+  
   

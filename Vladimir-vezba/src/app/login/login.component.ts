@@ -17,23 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-
-//   onSingIn(username: string, password: string){
-//     const accounts = this.service.getAccounts();
-//     const acc = accounts.find( x  => x.username === username)
-//    if(acc != null && acc.password === password){
-//       this.router.navigate(['/home']);
-//      alert('Korisnik uspesno ulogovan')
-//     const name = acc.name;
-//     const lastName = acc.lastName;
-//      console.log(name + ' ' + lastName)}
-//    else
-//      alert('Korisnik ne postoji u sistemu')
-//  }
  onSingIn1(username: string, password: string){
  this.service.onSingIn(username, password)
-//  this.router.navigate(['/home']);
-//  alert('Korisnik uspesno ulogovan')
 }
 }

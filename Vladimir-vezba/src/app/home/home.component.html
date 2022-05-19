@@ -1,19 +1,26 @@
 <body>
 <div ngClass='divPosition'>
 <div ngClass='dviName' > 
- <p>{{ getData() }}</p>
+ <p ngClass='p1'>{{ storageName() }}</p>
 </div> 
 <button ngClass='button1 button5'  (click)="onLogout()">Logout</button>
 </div>
 <div ngClass='topnav'>
+    <div *ngIf="show0" ngClass = 'div1'>
 <button ngClass='button button1' (click)="onShow()">Add Employee</button>
 <button ngClass='button button1' (click)="onShow1()">Employee List</button>
-
+   </div>
+   <div *ngIf="show1"> 
+<button ngClass='button button1' (click)="onShow1()">Main</button>
+   </div>
 </div>
 <div *ngIf="showSecret">
 <app-add-employee (accountAdd)="onAccountAdd($event)"></app-add-employee>
 </div>
 <div *ngIf="showSecret1">
 <app-employee-list></app-employee-list>
+</div>
+<div *ngIf="showSecret2">
+<app-main-page></app-main-page>
 </div>
 </body>
