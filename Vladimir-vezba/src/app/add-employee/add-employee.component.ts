@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output} from '@angular/core';
 import { Account } from '../models/employe.model';
 import { EmployeeServiceService} from '../employee-service.service';
-import { FormControl } from '@angular/forms';
 import { Observable} from 'rxjs';
 
 
@@ -27,9 +26,8 @@ export class AddEmployeeComponent implements OnInit{
   @ViewChild('accountworkPhone') accountworkPhoneRef: ElementRef | undefined;
   @ViewChild('accountmobilPhone') accountmobilPhoneRef: ElementRef | undefined;
   @Output() accountAdd = new EventEmitter <Account>();
-  accounts: Account[] = [];
   public addObservable!: Observable<Account[]>
-  // asdsad//
+ 
 
   constructor(private service: EmployeeServiceService) {}
 
@@ -58,28 +56,28 @@ export class AddEmployeeComponent implements OnInit{
     this.accountAdd.emit(newAccount);
   }) 
 }
-  btnLogin(){
-    const ingId=this.accountIdRef?.nativeElement.value;
-    const ingName=this.accountNameRef?.nativeElement.value;
-    const inglastName=this.accountlastNameRef?.nativeElement.value;
-    const ingPosition=this.accountpositionRef?.nativeElement.value;
-    const ingemail=this.accountemailRef?.nativeElement.value;
-    const ingUsername=this.accountUsernameRef?.nativeElement.value;
-    const ingPassword=this.accountPasswordRef?.nativeElement.value;
-    const ingaltEmail=this.accountaltEmailRef?.nativeElement.value;
-    const ingstatus=this.accountstatusRef?.nativeElement.value;
-    const ingcompany=this.accountcompanyRef?.nativeElement.value;
-    const ingdesignaton=this.accountdesignatonRef?.nativeElement.value;
-    const inginitials=this.accountinitialsRef?.nativeElement.value;
-    const ingworkPhone=this.accountworkPhoneRef?.nativeElement.value;
-    const ingmobilPhone=this.accountmobilPhoneRef?.nativeElement.value;
-    const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingPosition, ingemail, ingUsername,
-      ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone, );
+  // btnLogin(){
+  //   const ingId=this.accountIdRef?.nativeElement.value;
+  //   const ingName=this.accountNameRef?.nativeElement.value;
+  //   const inglastName=this.accountlastNameRef?.nativeElement.value;
+  //   const ingPosition=this.accountpositionRef?.nativeElement.value;
+  //   const ingemail=this.accountemailRef?.nativeElement.value;
+  //   const ingUsername=this.accountUsernameRef?.nativeElement.value;
+  //   const ingPassword=this.accountPasswordRef?.nativeElement.value;
+  //   const ingaltEmail=this.accountaltEmailRef?.nativeElement.value;
+  //   const ingstatus=this.accountstatusRef?.nativeElement.value;
+  //   const ingcompany=this.accountcompanyRef?.nativeElement.value;
+  //   const ingdesignaton=this.accountdesignatonRef?.nativeElement.value;
+  //   const inginitials=this.accountinitialsRef?.nativeElement.value;
+  //   const ingworkPhone=this.accountworkPhoneRef?.nativeElement.value;
+  //   const ingmobilPhone=this.accountmobilPhoneRef?.nativeElement.value;
+  //   const newAccount = this.populateAccountData(ingId, ingName, inglastName, ingPosition, ingemail, ingUsername,
+  //     ingPassword, ingaltEmail, ingstatus, ingcompany, ingdesignaton, inginitials, ingworkPhone, ingmobilPhone, );
 
   
-    this.accountAdd.emit(newAccount);
+  //   this.accountAdd.emit(newAccount);
     
-  }
+  // }
   populateAccountData(ingId: any ,ingName: any, inglastName: any, ingPosition: any, ingemail: any, ingUsername: string,
      ingPassword: string, ingaltEmail: any, ingstatus: any,ingcompany: any,ingdesignaton: any,inginitials: any,ingworkPhone: any,ingmobilPhone: any,): Account {
     const newAccount = new Account();
