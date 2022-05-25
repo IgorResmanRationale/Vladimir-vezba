@@ -1,12 +1,25 @@
 <body>
-<div ngClass="div1">
-<div ngClass="logTex">
-    <p ngClass="text">LOGIN</p>
-</div>
-<div ngClass="logDiv"><br>
-<div ngClass="text123">Username<input  type="text" class="form-control" #accountUsername></div><br><br>
-<div ngClass="text123">Password  <input  type="password" class="form-control" #accountPassword></div><br><br>
-<button ngClass='button1' (click)="onSingIn1(accountUsername.value, accountPassword.value)">Login</button>
-</div>
-</div>
+    <div ngClass="div1">
+        <div ngClass="logDiv"><br>
+            <div ngClass="div2">
+                <img src="/assets/Rationale_logo.png" alt="image">
+            </div>
+            <input type="text" placeholder="Enter User Name" [formControl]="textControl" [(ngModel)]="username"><br><br
+                *ngIf="!showSecret"><br *ngIf="!showSecret">
+            <p ngClass="p1" *ngIf="showSecret">Potrebno uneti minimum 3 karaktera za username</p>
+            <input type="password" placeholder="Enter Password" [formControl]="textControl1"
+                [(ngModel)]="password"><br><br *ngIf="!showSecret1"><br *ngIf="!showSecret1">
+            <p ngClass="p3" *ngIf="showSecret1">Potrebno uneti minimum 8 karaktera za password</p><br
+                *ngIf="!showSecret4"><br *ngIf="!showSecret4"><br *ngIf="!showSecret4">
+            <div ngClass="div4">
+                <p ngClass="p2" *ngIf="showSecret4">Potrebno uneti minimum jedno veliko i malo slovo, jedan broj i jedan
+                    znak za password</p>
+            </div>
+            <div ngClass="div3">
+                <button mat-raised-button ngClass='button1'
+                    [disabled]="showSecret || showSecret1 || showSecret2 || showSecret3 || showSecret4"
+                    (click)="onSingIn1(username, password)">Login</button>
+            </div>
+        </div>
+    </div>
 </body>

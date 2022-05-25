@@ -1,49 +1,52 @@
 <body>
-<div ngClass='table2'>
-        <table ngClass='table0'>
-                <tr ngClass='tr1'>
-                        <td ngClass='td'>Name</td>
-                        <td ngClass='td'>Last Name</td>
-                        <td ngClass='td'>Position</td>
-                        <td ngClass='td'>Status</td>
-                        <td ngClass='td1'></td>
-                        <td ngClass='td1'></td>
-                </tr>
-                <tr *ngFor="let account of accounts" ngClass='tr2' >
-                        <td ngClass='td'>{{account.name}}</td>
-                        <td ngClass='td'>{{account.lastName}}</td>
-                        <td ngClass='td'>{{account.position}}</td>
-                        <td ngClass='td'  class="boja">{{account.status}}</td>
-                        <td ngClass='td1'> <button ngClass='button123' (click)="editRout(account.id)">Edit</button></td>
-                        <td ngClass='td1'><button ngClass='button123' (click)="btnDelete(account.id)">Delete</button>
-                        </td>
+        <div ngClass='table2'>
+                <table ngClass='table0'>
+                        <tr ngClass='tr1'>
+                                <td ngClass='td'>Name</td>
+                                <td ngClass='td'>Last Name</td>
+                                <td ngClass='td'>Position</td>
+                                <td ngClass='td'>Status</td>
+                                <td ngClass='td1'></td>
+                                <td ngClass='td1'></td>
+                        </tr>
+                        <tr *ngFor="let account of accounts" ngClass='tr2'>
+                                <td ngClass='td'>{{account.name}}</td>
+                                <td ngClass='td'>{{account.lastName}}</td>
+                                <td ngClass='td'>{{account.position}}</td>
+                                <td ngClass='td' class="boja">{{account.status}}</td>
+                                <td ngClass='td1'> <button ngClass='button123'
+                                                (click)="editRout(account.id)">Edit</button></td>
+                                <td ngClass='td1'><button ngClass='button123'
+                                                (click)="btnDelete(account.id)">Delete</button>
+                                </td>
 
-                </tr>
-        </table>
-</div>
-<div ngClass='div1'>
-<table>
- <thead>
-  <tr>
-    <th>Name</th>
-    <th>Last Name</th>
-    <th>Position</th>
-    <th>Status</th>
-    <th></th>
-  </tr>
- </thead>
- <tbody>
-  <tr *ngFor="let account of accounts" >
-     <td ngClass='div2'>{{account.name}}</td>
-     <td ngClass='div2'>{{account.lastName}}</td>
-     <td ngClass='div2'>{{account.position}}</td>
-     <td ngClass='div2'>{{account.status}}</td>
-     <td ngClass='div3'> 
-     <button ngClass='button123' (click)="editRout(account.id)">Edit</button>
-     <button ngClass='button123' (click)="btnDelete(account.id)">Delete</button>
-     </td>
-  </tr>
- </tbody>
- </table>
-</div>
+                        </tr>
+                </table>
+        </div>
+        <div ngClass='div1'>
+                <table>
+                        <thead>
+                                <tr>
+                                        <th>Name</th>
+                                        <th>Last Name</th>
+                                        <th>Position</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let account of accounts">
+                                        <td ngClass='div2'>{{account.name}}</td>
+                                        <td ngClass='div2'>{{account.lastName}}</td>
+                                        <td ngClass='div2'>{{account.position}}</td>
+                                        <td ngClass='div2'>{{account.status}}</td>
+                                        <td ngClass='div3'>
+                                                <button ngClass='button123' (click)="editRout(account.id)">Edit</button>
+                                                <button ngClass='button123'
+                                                        (click)="btnDelete(account.id)">Delete</button>
+                                        </td>
+                                </tr>
+                        </tbody>
+                </table>
+        </div>
 </body>

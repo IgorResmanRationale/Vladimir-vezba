@@ -1,6 +1,7 @@
 import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
 import { Injectable, EventEmitter } from '@angular/core';
 import { PreloadAllModules } from '@angular/router';
+import { delay, of } from 'rxjs';
 import { Account, Profile } from './models/employe.model';
 
 
@@ -13,7 +14,7 @@ export class EmployeeServiceService {
   accounts: Account[] = [
     {
       id: 0, name: 'admin', lastName: 'admin', position: 'admin', email: 'admin.admin@gmail.com', username: 'admin',
-      password: 'admin', altEmail: 'admin.admin1@gmail.com', status: 'Active', company: '1', designaton: 'xxxxx', initials: 'xxxxxx', workPhone: 222333, mobilPhone: +381543676,
+      password: 'Admin123!', altEmail: 'admin.admin1@gmail.com', status: 'Active', company: '1', designaton: 'xxxxx', initials: 'xxxxxx', workPhone: 222333, mobilPhone: +381543676,
       profile: { name: 'Sysadmin', permission: 'admin' }
     },
     {
@@ -31,6 +32,12 @@ export class EmployeeServiceService {
   profile: Profile[] = [
     { name: 'admin', permission: 'Admin' }
   ]
+
+  checkIfUsernameExists(value: string) {
+    return of(this.accounts.some((a) => a.username === value)).pipe(
+      delay(1000)
+    );
+  }
 
   addAccount(account: Account) {
     //kreirati logiku za dodavanje id (id od poslednjeg unesenog + 1)  

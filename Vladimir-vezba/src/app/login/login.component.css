@@ -5,31 +5,63 @@ body{ background-color: #ecf1f5;
   background-repeat: no-repeat;
   background-size: cover;}
 
-.div1{ position: sticky; top: 35%;}
+.div1{ position: sticky; top: 25%;}
 
-.logTex{border-top: solid; border-left: solid; border-right: solid;
-  border-color: rgb(206, 203, 203); border-width: 1px; width: 450px; height: 50px;
-  background-color: #ffffff; border-top-left-radius: 10px; border-top-right-radius: 10px;
+.div2{display: flex;
+  justify-content: center;
+  margin: 20px 0px 40px 0px}
+
+.div3{display: flex;
+  justify-content: center;}
+
+.div4{
+  display: flex;
+  justify-content: center;
+}
+
+.p1{display: flex;
+  justify-content: center;
+  margin: 0px 0px 18px 0px;
+  color: red;}
+
+.p2{color: red;
+  width: 71%;
+  margin: 0px 0px 18px 0px;}
+
+.p3{display: flex;
+    justify-content: center;
+    margin: 0px 0px 18px 0px;
+    color: red;}
+
+.logDiv{border: solid; border-radius: 10px;
+  border-color: rgb(206, 203, 203); border-width: 1px; width: 450px; height: 495px;
+  background-color: #ffffff; 
   margin: auto;
 }
 
-.logDiv{border-bottom: solid; border-left: solid; border-right: solid;
-  border-color: rgb(206, 203, 203); border-width: 1px; width: 450px; height: 170px;
-  background-color: #f8fafd; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
-  margin: auto;
+.button1{font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 75px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background: #367cdf;
+  margin: 16px 0px 0px 0px;
 }
 
-.button1{font-family: Arial, Helvetica, sans-serif; font-weight:	bold;font-size: 14px;
-  display: flex; flex-direction: column; align-items: center; padding: 9px 20px;
-   border-radius: 10px; border: none; color: #fff; background: #367cdf;
-   margin: auto;  position: relative; bottom: 20px; left: 115px;
+.button1:disabled {
+  background: #aec8ee;
 }
 
-input{width: 50%;
+input{width: 75%;
   border: 1px solid #a1a1a1;
-  padding: 3px ;
+  padding: 7px ;
   border-radius: 3px;
-  position: relative; left: 10px;  
+  position: relative; left: 52px;  
 }
 
 .text123{font-family: Arial, Helvetica, sans-serif;
