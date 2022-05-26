@@ -1,9 +1,9 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, SimpleChanges, } from '@angular/core';
 import { LoginServiceService } from '../LoginService.service';
 import { Router } from '@angular/router';
 import { Account } from '../models/employe.model';
 import { EmployeeServiceService } from '../employee-service.service';
-import { debounceTime, Observable, scan, startWith, Subscription } from 'rxjs';
+import { debounceTime, Observable, scan, startWith, Subscription, BehaviorSubject, distinctUntilChanged} from 'rxjs';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -11,7 +11,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit{
   usernameValidation!: Observable<string[]>;
   passwordValidation: Observable<string[]> | undefined;
   textControl = new FormControl();
@@ -28,65 +28,60 @@ export class LoginComponent implements OnInit {
   showSecret2 = false;
   showSecret3 = false;
   showSecret4 = false;
+  debounce = 500;
 
 
 
   constructor(private service1: LoginServiceService, private service: EmployeeServiceService, private router: Router) { }
-
-
+  
   ngOnInit(): void {
-    this.usernameValidation = this.textControl.valueChanges.pipe(
-      debounceTime(500),
-      startWith(this.username),
-      scan((acc, t) => t ? acc.concat(t) : [], [])
-    );
-    this.firstObsSubscription = this.usernameValidation.subscribe(data => {
-      this.lastElementUser = data[data.length - 1];
-      if (this.lastElementUser?.length < 3) {
-        this.showSecret = true
-        console.log('Username length ' + this.lastElementUser?.length + ' Error');
-      }
-      else {
-        this.showSecret = false
-        console.log('Username length ' + this.lastElementUser?.length);
-      }
-      if (this.lastElementUser == undefined) {
-        this.showSecret2 = true
-      }
-      else { this.showSecret2 = false }
-    });
-
-    ////////////////////////////////////
-
-    this.passwordValidation = this.textControl1.valueChanges.pipe(
-      debounceTime(500),
-      startWith(this.password),
-      scan((acc, t) => t ? acc.concat(t) : [], [])
-    );
-    this.secondObsSubscription = this.passwordValidation.subscribe(data => {
-      this.lastElementPass = data[data.length - 1];
-      if (this.lastElementPass?.length < 8) {
-        this.showSecret1 = true
-        console.log('Password length ' + this.lastElementPass?.length + ' Error');
-      }
-      else {
-        this.showSecret1 = false
-        console.log('Password length ' + this.lastElementPass?.length);
-      }
-
-      if (this.lastElementPass?.length == undefined) {
-        this.showSecret3 = true
-      }
-      else { this.showSecret3 = false }
-
-      var passwordRequirements = /^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]/;
-      if (!passwordRequirements.test(this.lastElementPass) && this.showSecret3 == false) {
-        this.showSecret4 = true
-      }
-      else { this.showSecret4 = false }
-    });
-
-  }
+    this.textControl = new FormControl('');
+    this.textControl.valueChanges
+      .pipe(debounceTime(this.debounce), distinctUntilChanged())
+      .subscribe(data => {
+        // const subject = new BehaviorSubject(query)
+        // subject.subscribe(data => {
+        if (data.length < 3 && data.length > 0) {
+              this.showSecret = true
+              console.log('Username length ' + data.length + ' Error');
+            }
+            else {
+              this.showSecret = false
+              console.log('Username length ' + data.length);
+            }
+            if (data == 0) {
+              this.showSecret2 = true
+            }
+            else { this.showSecret2 = false }});
+     
+  
+      this.textControl1 = new FormControl('');
+      this.textControl1.valueChanges
+        .pipe(debounceTime(this.debounce), distinctUntilChanged())
+        .subscribe(query => {
+          const subject = new BehaviorSubject(query)
+          subject.subscribe(data => {
+            if (data.length < 8 && data.length > 0) {
+                  this.showSecret1 = true
+                  console.log('Password length ' + data.length + ' Error');
+                }
+                else {
+                  this.showSecret1 = false
+                  console.log('Password length ' + data.length);
+                }
+          
+                if (data.length == undefined) {
+                  this.showSecret3 = true
+                }
+                else { this.showSecret3 = false }
+          
+                var passwordRequirements = /^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]/;
+                if (!passwordRequirements.test(data) && this.showSecret3 == false && data.length > 0) {
+                  this.showSecret4 = true
+                }
+                else { this.showSecret4 = false };})})
+  
+              }
 
   getAccounts() {
     return this.service.accounts
