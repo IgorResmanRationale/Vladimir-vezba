@@ -4,20 +4,19 @@
             <div ngClass="div2">
                 <img src="/assets/Rationale_logo.png" alt="image">
             </div>
-            <input type="text" placeholder="Enter User Name" [formControl]="textControl" [(ngModel)]="username"><br><br
-                *ngIf="!showSecret"><br *ngIf="!showSecret">
-            <p ngClass="p1" *ngIf="showSecret">Potrebno uneti minimum 3 karaktera za username</p>
-            <input type="password" placeholder="Enter Password" [formControl]="textControl1"
-                [(ngModel)]="password"><br><br *ngIf="!showSecret1"><br *ngIf="!showSecret1">
-            <p ngClass="p3" *ngIf="showSecret1">Potrebno uneti minimum 8 karaktera za password</p><br
-                *ngIf="!showSecret4"><br *ngIf="!showSecret4"><br *ngIf="!showSecret4">
+            <input type="text" placeholder="Enter User Name" [(ngModel)]="username" (keyup)="UsernameValidation($event)" ><br><br
+                *ngIf="!showUserError"><br *ngIf="!showUserError">
+            <p ngClass="p1" *ngIf="showUserError">You must enter at least 3 letters for the username</p>
+            <input type="password" placeholder="Enter Password" 
+                [(ngModel)]="password"  (keyup)="PasswordValidation($event)" ><br><br *ngIf="!showPassError"><br *ngIf="!showPassError">
+            <p ngClass="p3" *ngIf="showPassError">You must enter at least 8 letters for the password</p><br
+                *ngIf="!PassRequirements"><br *ngIf="!PassRequirements"><br *ngIf="!PassRequirements">
             <div ngClass="div4">
-                <p ngClass="p2" *ngIf="showSecret4">Potrebno uneti minimum jedno veliko i malo slovo, jedan broj i jedan
-                    znak za password</p>
+                <p ngClass="p2" *ngIf="PassRequirements">You must enter at least one uppercase letter, one lowercase letter, one character and one number</p>
             </div>
             <div ngClass="div3">
                 <button mat-raised-button ngClass='button1'
-                    [disabled]="showSecret || showSecret1 || showSecret2 || showSecret3 || showSecret4"
+                    [disabled]="showUserError || showPassError || showEmptyUser || showEmptyPass || PassRequirements"
                     (click)="onSingIn1(username, password)">Login</button>
             </div>
         </div>

@@ -1,7 +1,4 @@
-import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
-import { Injectable, EventEmitter } from '@angular/core';
-import { PreloadAllModules } from '@angular/router';
-import { delay, of } from 'rxjs';
+import { Injectable} from '@angular/core';
 import { Account, Profile } from './models/employe.model';
 
 
@@ -33,11 +30,6 @@ export class EmployeeServiceService {
     { name: 'admin', permission: 'Admin' }
   ]
 
-  checkIfUsernameExists(value: string) {
-    return of(this.accounts.some((a) => a.username === value)).pipe(
-      delay(1000)
-    );
-  }
 
   addAccount(account: Account) {
     //kreirati logiku za dodavanje id (id od poslednjeg unesenog + 1)  

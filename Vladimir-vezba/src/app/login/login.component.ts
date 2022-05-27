@@ -1,10 +1,10 @@
-import { Component, OnInit, SimpleChanges, } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { LoginServiceService } from '../LoginService.service';
 import { Router } from '@angular/router';
 import { Account } from '../models/employe.model';
 import { EmployeeServiceService } from '../employee-service.service';
-import { debounceTime, Observable, scan, startWith, Subscription, BehaviorSubject, distinctUntilChanged} from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { Subscription, BehaviorSubject, distinctUntilChanged} from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
@@ -12,10 +12,6 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  usernameValidation!: Observable<string[]>;
-  passwordValidation: Observable<string[]> | undefined;
-  textControl = new FormControl();
-  textControl1 = new FormControl();
   account!: Account | undefined;
   username = '';
   password = '';
@@ -23,65 +19,75 @@ export class LoginComponent implements OnInit{
   private secondObsSubscription!: Subscription;
   lastElementUser = '';
   lastElementPass = '';
-  showSecret = false;
-  showSecret1 = false;
-  showSecret2 = false;
-  showSecret3 = false;
-  showSecret4 = false;
-  debounce = 500;
-
-
+  showUserError = false;
+  showPassError = false;
+  showEmptyUser = false;
+  showEmptyPass = false;
+  PassRequirements = false;
+  usernameMinValue = 3;
+  passwordMinValue = 8;
+  minShowError = 0;
 
   constructor(private service1: LoginServiceService, private service: EmployeeServiceService, private router: Router) { }
-  
+
   ngOnInit(): void {
-    this.textControl = new FormControl('');
-    this.textControl.valueChanges
-      .pipe(debounceTime(this.debounce), distinctUntilChanged())
-      .subscribe(data => {
-        // const subject = new BehaviorSubject(query)
-        // subject.subscribe(data => {
-        if (data.length < 3 && data.length > 0) {
-              this.showSecret = true
-              console.log('Username length ' + data.length + ' Error');
-            }
-            else {
-              this.showSecret = false
-              console.log('Username length ' + data.length);
-            }
-            if (data == 0) {
-              this.showSecret2 = true
-            }
-            else { this.showSecret2 = false }});
-     
-  
-      this.textControl1 = new FormControl('');
-      this.textControl1.valueChanges
-        .pipe(debounceTime(this.debounce), distinctUntilChanged())
-        .subscribe(query => {
-          const subject = new BehaviorSubject(query)
-          subject.subscribe(data => {
-            if (data.length < 8 && data.length > 0) {
-                  this.showSecret1 = true
-                  console.log('Password length ' + data.length + ' Error');
-                }
-                else {
-                  this.showSecret1 = false
-                  console.log('Password length ' + data.length);
-                }
-          
-                if (data.length == undefined) {
-                  this.showSecret3 = true
-                }
-                else { this.showSecret3 = false }
-          
-                var passwordRequirements = /^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]/;
-                if (!passwordRequirements.test(data) && this.showSecret3 == false && data.length > 0) {
-                  this.showSecret4 = true
-                }
-                else { this.showSecret4 = false };})})
-  
+    if(this.username == ''){
+      this.showEmptyUser = true
+    }
+    else { this.showEmptyUser = false }
+    if(this.password == ''){
+      this.showEmptyPass = true
+    }
+    else { this.showEmptyPass = false }
+  }
+
+  UsernameValidation(event: any){
+    var usernameRequirements = /^.{3,}$/;
+    this.lastElementUser = event.target.value
+    const subject = new BehaviorSubject(this.lastElementUser)
+    subject.next(this.lastElementUser)
+    subject.subscribe(data => {
+             if (!usernameRequirements.test(data) && data.length > this.minShowError ) {
+                this.showUserError = true
+                console.log('Username length ' + data.length + ' Error');
               }
+              else {
+                this.showUserError = false
+                console.log('Username length ' + data.length);
+              }
+              if (data.length == 0) {
+                this.showEmptyUser = true
+              }
+              else { this.showEmptyUser = false }
+            })
+  }
+
+  PasswordValidation(event: any){
+    var passwordNumRequirements = /^.{8,}$/;
+    var passwordRequirements = /^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]/;
+    this.lastElementPass= event.target.value
+    const subject = new BehaviorSubject(this.lastElementPass)
+    subject.next(this.lastElementPass)
+    subject.subscribe(data => {
+             if (!passwordNumRequirements.test(data) && data.length > this.minShowError ) {
+                this.showPassError = true
+                console.log('Username length ' + data.length + ' Error');
+              }
+              else {
+                this.showPassError = false
+                console.log('Username length ' + data.length);
+              }
+              if (data.length == 0) {
+                this.showEmptyPass = true
+              }
+              else { this.showEmptyPass = false }
+              if (!passwordRequirements.test(data) && this.showEmptyPass == false && data.length > 0) {
+                       this.PassRequirements = true
+                            }
+                            else { this.PassRequirements = false }
+            })
+  } 
+  
 
   getAccounts() {
     return this.service.accounts
